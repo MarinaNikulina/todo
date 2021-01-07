@@ -1,5 +1,4 @@
-from django import template
-register = template.Library()
+from django.template.defaulttags import register
 
 """Количество строк на экране константа COUNT_OF_LINE"""
 from todo.settings import COUNT_OF_LINE
