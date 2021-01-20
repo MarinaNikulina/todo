@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {%block title%}
+    {% block title %}
 
-    {%endblock%}
+    {% endblock %}
 
     <link rel="shortcut icon" type="image/png" href="imges/favicon.png"/>
     <link rel="stylesheet" href="/static/css/index.css">
@@ -31,7 +31,7 @@
                     </svg>
                 </div>
                 <div class='user-profile__user-name'>
-                    <span> {{user_name}} </span>
+                    <span> {{ user_name }} </span>
                 </div>
                 <a class="user-profile_exit-button" href="/logout"><img src=" /static/images/exit.svg" alt="exit"></a>
             </div>
@@ -44,20 +44,20 @@
         <div class="relationship__table-data">
             <div class="table-data__table-header">
 
-                {%block name_list%}
+                {% block name_list %}
 
-                {%endblock%}
+                {% endblock %}
                 <a class="add_new_list" href="/create/">
-                     <div class="header__button-create-bundle">+</div>
+                    <div class="header__button-create-bundle">+</div>
                 </a>
 
             </div>
-            {%block body%}
+            {% block body %}
 
-            {%endblock%}
-            {%block empty%}
+            {% endblock %}
+            {% block empty %}
 
-            {%endblock%}
+            {% endblock %}
 
         </div>
     </section>
