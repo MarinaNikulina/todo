@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from list_item.models import ListItemModel
+from main.models import ListModel
 
 # item_data = {
 #     'item_lists': [
@@ -14,13 +15,13 @@ from list_item.models import ListItemModel
 # }
 
 
-def item_view(request):
-    item_lists = ListItemModel.objects.filter(
-        user=request.user,
-        id=1
-    )
+def item_view(request,pk):
 
-    contex = {'item_lists': item_lists,
-              'user_name': request.user.username
-              }
-    return render(request, 'item_index.html', contex)
+    my_list=ListModel.objects.select_related('user').get(id=pk)
+    item_lists = ListItemModel.objects.filter(list_model=my_list)
+
+    context = {'item_lists': item_lists,
+               'user_name': my_list.user.username,
+               'item_name': my_list.name
+               }
+    return render(request, 'list_index.html', context)

@@ -10,4 +10,3 @@ class ListItemAdmin(admin.ModelAdmin):
 
 admin.site.register(ListItemModel, ListItemAdmin)
 
-# Register your models here.

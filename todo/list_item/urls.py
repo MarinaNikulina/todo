@@ -4,5 +4,5 @@ from list_item.views import item_view
 app_name= 'list_item'
 
 urlpatterns = [
-       path('', item_view)
+       path('', item_view,name='list_item')
 ]
